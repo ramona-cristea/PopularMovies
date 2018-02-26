@@ -1,6 +1,6 @@
 # PopularMovies
 
-Project which uses themoviedb.org API, implemented for educational purpose only. The app will:
+Project which uses themoviedb.org API, implemented for Android Developer Nanodegree Program from Udacity, for educational purpose only. The app will:
 * Display a GridView of movies posters
 * Possibility to change movies sort order in GridView via a menu. The sort order can be by most popular or by highest-rated.
 * By tapping on a movie poster, user can see a details screen with additional movie's information.
