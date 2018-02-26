@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name" translatable="true">Popular Movies</string>
+    <string name="movies_overview" translatable="true">Pop Movies</string>
+    <string name="movie_details" translatable="true">Movie Details</string>
+    <string name="movie_poster" translatable="true">Movie Poster</string>
+    <string name="action_sort" translatable="true">Sort</string>
+    <string name="sort_by_popularity" translatable="true">Sort by Popularity</string>
+    <string name="sort_by_rating" translatable="true">Sort by Rating</string>
+    <string name="details_transition" translatable="false">details_transition</string>
+    <string name="load_movies_error" translatable="true">Please check your internet connection and try again!</string>
+    <string name="movie_vote" translatable="false">%1$s/10</string>
+</resources>
