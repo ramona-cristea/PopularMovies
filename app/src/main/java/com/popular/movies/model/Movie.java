@@ -2,10 +2,15 @@ package com.popular.movies.model;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.text.TextUtils;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Movie implements Parcelable{
+    //TODO change Movie class in order to handle properties from GetMovieDetails method
+    //E.g https://api.themoviedb.org/3/movie/269149?api_key=eb37d8830354727623a185f6f8c5c616&append_to_response=videos,reviews
 
     @SerializedName("vote_count")
     private int voteCount;
@@ -40,8 +45,52 @@ public class Movie implements Parcelable{
     @SerializedName("overview")
     private String overview;
 
+    @SerializedName("genres")
+    private List<Genre> genres = null;
+
+    private String genresAsString;
+
     @SerializedName("release_date")
     private String releaseDate;
+
+    @SerializedName("runtime")
+    private int runtime;
+
+    @SerializedName("videos")
+    private DataWrapper<Trailer> videos;
+
+    @SerializedName("reviews")
+    private DataWrapper<Review> reviews;
+
+    public void setVoteAverage(double voteAverage) {
+        this.voteAverage = voteAverage;
+    }
+
+    public void setPopularity(double popularity) {
+        this.popularity = popularity;
+    }
+
+    public void setPosterPath(String posterPath) {
+        this.posterPath = posterPath;
+    }
+
+    public void setOriginalTitle(String originalTitle) {
+        this.originalTitle = originalTitle;
+    }
+
+    public void setOverview(String overview) {
+        this.overview = overview;
+    }
+
+    public void setReleaseDate(String releaseDate) {
+        this.releaseDate = releaseDate;
+    }
+
+    public void setRuntime(int runtime) {
+        this.runtime = runtime;
+    }
+
+    public Movie(){}
 
     private Movie(Parcel in) {
         voteCount = in.readInt();
@@ -56,11 +105,16 @@ public class Movie implements Parcelable{
         backdropPath = in.readString();
         overview = in.readString();
         releaseDate = in.readString();
+        genresAsString = in.readString();
     }
 
     @Override
     public int describeContents() {
         return 0;
+    }
+
+    public int getRuntime() {
+        return runtime;
     }
 
     @Override
@@ -73,10 +127,12 @@ public class Movie implements Parcelable{
         out.writeDouble(popularity);
         out.writeString(posterPath);
         out.writeString(originalLanguage);
+
         out.writeString(originalTitle);
         out.writeString(backdropPath);
         out.writeString(overview);
         out.writeString(releaseDate);
+        out.writeString(genresAsString);
     }
 
     public static final Creator<Movie> CREATOR = new Creator<Movie>() {
@@ -111,6 +167,34 @@ public class Movie implements Parcelable{
         return posterPath;
     }
 
+    public double getPopularity() {
+        return popularity;
+    }
+
+    public String getGenres() {
+        StringBuilder genresBuilder = new StringBuilder();
+        if(genres != null && genres.size() > 0) {
+            for(int i = 0; i < genres.size(); i++) {
+                genresBuilder.append(genres.get(i).getName());
+                if(i < genres.size() - 1) {
+                    genresBuilder.append(", ");
+                }
+            }
+        }
+        if(!TextUtils.isEmpty(genresBuilder.toString())) {
+            genresAsString = genresBuilder.toString();
+        }
+        return genresAsString;
+    }
+
+    public DataWrapper<Trailer> getVideos() {
+        return videos;
+    }
+
+    public DataWrapper<Review> getReviews() {
+        return reviews;
+    }
+
     public String getOriginalTitle() {
         return originalTitle;
     }
@@ -123,4 +207,7 @@ public class Movie implements Parcelable{
         return releaseDate;
     }
 
+    public void setGenresAsString(String genresAsString) {
+        this.genresAsString = genresAsString;
+    }
 }

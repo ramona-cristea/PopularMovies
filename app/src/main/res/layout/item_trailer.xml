@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trailer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/margin_content_areas">
+
+    <ImageView
+        android:id="@+id/trailer_thumbnail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/movie_poster"
+        tools:src="@drawable/vector_trailer"
+        />
+
+    <ImageView
+        android:id="@+id/trailer_play_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/trailer_thumbnail"
+        android:layout_alignTop="@id/trailer_thumbnail"
+        android:contentDescription="@string/play_button"
+        android:src="@drawable/vector_play"
+        android:scaleType="center"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/trailer_thumbnail"
+        android:background="@color/black">
+
+        <TextView
+            android:id="@+id/trailer_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toStartOf="@id/trailer_share_icon"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/margin_content_areas"
+            android:paddingEnd="@dimen/margin_content_areas"
+            android:textColor="@color/white"
+            tools:text="Kung Fu Panda"/>
+
+
+        <ImageView
+            android:id="@+id/trailer_share_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/vector_share"
+            android:paddingEnd="@dimen/margin_content_areas"
+            android:paddingStart="@dimen/margin_content_areas"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/share_button"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+

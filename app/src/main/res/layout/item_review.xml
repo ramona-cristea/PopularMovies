@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/trailer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/activity_horizontal_padding"
+    android:paddingEnd="@dimen/activity_horizontal_padding"
+    android:paddingBottom="@dimen/activity_vertical_padding"
+    android:paddingTop="@dimen/activity_vertical_padding">
+
+    <TextView
+        android:id="@+id/text_review_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_dark_blue"
+        android:textStyle="bold"
+        tools:text="Ramona Cristea"/>
+
+    <TextView
+        android:id="@+id/text_review_content"
+        android:layout_below="@id/text_review_author"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_dark_blue"
+        android:layout_marginTop="@dimen/small_margin_content_areas"
+        tools:text="This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment.This is a very large comment."
+        />
+
+
+
+</RelativeLayout>
+

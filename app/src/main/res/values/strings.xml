@@ -1,12 +1,21 @@
 <resources>
-    <string name="app_name" translatable="true">Popular Movies</string>
-    <string name="movies_overview" translatable="true">Pop Movies</string>
-    <string name="movie_details" translatable="true">Movie Details</string>
+    <string name="app_name" translatable="true">MovieSpot</string>
+    <string name="movies_overview" translatable="true">Movies</string>
     <string name="movie_poster" translatable="true">Movie Poster</string>
-    <string name="action_sort" translatable="true">Sort</string>
-    <string name="sort_by_popularity" translatable="true">Sort by Popularity</string>
-    <string name="sort_by_rating" translatable="true">Sort by Rating</string>
-    <string name="details_transition" translatable="false">details_transition</string>
     <string name="load_movies_error" translatable="true">Please check your internet connection and try again!</string>
     <string name="movie_vote" translatable="false">%1$s/10</string>
+    <string name="release">Year: %1$s</string>
+    <string name="duration_in_min">%1$d min</string>
+    <string name="popularity">Popularity: %1$s</string>
+    <string name="movie">Movie</string>
+    <string name="details">Details</string>
+    <string name="trailers">Trailers</string>
+    <string name="reviews">Reviews</string>
+    <string name="favorites">Favorites</string>
+    <string name="top_rated">Top rated</string>
+    <string name="most_popular">Most popular</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="play_button" translatable="true">Play button</string>
+    <string name="share_button" translatable="true">Share button</string>
+    <string name="share_trailer_text" translatable="true">Share trailer url</string>
 </resources>
